@@ -1,0 +1,16 @@
+const module = {
+  firstName: "Lallu",
+  lastName: "kallu",
+
+  display: function (){
+    console.log(this.firstName ,this.lastName);
+  },
+
+};
+
+const getX = function (x,y) {
+    console.log(x+y)
+    this.display();
+}
+
+getX.call(module,2 , 6);
