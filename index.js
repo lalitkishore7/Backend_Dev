@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.text());
 app.use(bodyParser.urlencoded());
 
-// express middleware
+// express middleware :-> These middlewares can be used as validation layer
 function m1(req, res, next) {
     console.log("m1 is called");
     next();
@@ -29,8 +29,6 @@ app.get('/home', m1, m2, (req, res) => {
     console.log(req.url, req.query);
     return res.json({ msg: "OK" }); // here we just passing the js object
 })
-
-app.get('/home')
 
 app.get('/products/:product_id/rating/:rate', (req, res) => {
     // :id part is variable and products is static
